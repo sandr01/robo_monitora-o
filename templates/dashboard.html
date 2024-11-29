@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Monitoramento Redes Sociais Bot</h1>
+    <div class="container">
+        <div class="card">
+            <h3>Infos do dia</h3>
+            <p><strong>Relatórios com sucesso:</strong> <span id="relatorios-sucesso"></span></p>
+            <p><strong>Relatórios com erro:</strong> <span id="relatorios-erro"></span></p>
+            <p><strong>Última execução:</strong> <span id="ultima-execucao"></span></p>
+            <p><strong>Total de execuções no dia:</strong> <span id="total-execucoes"></span></p>
+            <p><strong>Dias capturados no relatório mensal:</strong> <span id="dias-capturados"></span></p>
+        </div>
+        <div class="card">
+            <h3>Logs da última execução</h3>
+            <div id="logs">
+                {% for log in data.logs %}
+                <p>{{ log.data }} - {{ log.mensagem }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <footer>
+        © 2024 - Monitoramento Redes Sociais Bot
+    </footer>
+</body>
+</html>
